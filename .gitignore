@@ -1,0 +1,4 @@
+t_venv/
+node_modules/
+__pycache__/
+db.sqlite3
