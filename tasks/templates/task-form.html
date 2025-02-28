@@ -10,14 +10,25 @@
   <body>
     <div class="w-1/2 mx-auto mt-8">
       <div>
-        {% if message %}
-        <p>{{message}}</p>
+        {% if messages %}
+          {% for message in messages%}
+            <div class"px-2 py-1">
+              {{message}}
+            </div>
+          {% endfor %}
         {% endif %}
       </div>
       <div>
         <form method="POST">
-          {% csrf_token %} {{form.as_p}}
-          <button type="submit" class = "bg-rose-600 px-3 py-2 text-white mt-2 rounded-md">Submit</button>
+          {% csrf_token %}
+          {{task_form.as_p}}
+          {{task_detail_form.as_p}}
+          <button
+            type="submit"
+            class="bg-rose-600 px-3 py-2 text-white mt-2 rounded-md"
+          >
+            Submit
+          </button>
         </form>
       </div>
     </div>
